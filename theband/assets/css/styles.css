@@ -1,0 +1,435 @@
+/* reset các thuộc tính của css */
+*{
+padding: 0;
+margin: 0;
+/* Thuộc tính giúp lúc padding nó không bị thay đổi kích thước */
+box-sizing: border-box;
+}
+/* Nguyên tắc làm việc
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Từ tổng quan đến chi tiết */
+/* Một số mẹo khi làm
+1.vị trí
+2. kích thước
+3. Màu sắc
+4. Kiểu dáng (Kiểu chữ, hình tròn, vuông, .... 
+Chú ý: Ta nên tìm ra những điểm chung có cùng css để tái sử dụng */
+/* comon */
+.clear{
+clear: both;
+}
+.text-white{
+color: #fff!important;
+}
+.row{
+margin-left: -8px;
+margin-right: -8px ;
+}
+.row::after{
+content: "";
+/* clear phải đi với thẻ block */
+display: block;
+clear: both;
+}
+
+.col{
+padding-left: 8px;
+padding-right: 8px;
+float: left;
+}
+.col-third{
+width: 33.33333%;
+}
+.col-haft{
+width: 50%;
+}
+
+.col-full{
+width: 100%;
+}
+
+.mt-8{
+margin-top: 8px;
+}
+.mt-16{
+margin-top: 16px;
+}
+.text-center{
+text-align: center ! important;
+}
+/* main */
+#main{
+
+}
+html{ 
+    /* thuộc tính mới: hành vi khi cuộn, trường hợp này là ấn vào nút nó sẽ đi xuống một cách mượt mà  */
+scroll-behavior: smooth;
+/*Tại sao lại để ở đây mà không phải để ở thẻ * vì thẻ html thì nó chỉ tác dụng lên chữ thôi, còn thẻ * thì nó sẽ tác động lên toàn bộ bao gồm cả chữ và các thẻ khác. nó sẽ không chuyên nghiệp */
+font-family: "Lato", sans-serif;
+}
+
+#header{
+    /* Thuộc tính cố định vị trí , khi dùng position thì nó sẽ chìm xuống hoặc nổi lên so với bề mặt, nếu nó chìm xuống ta phải dùng thuộc tính nâng lên bằng thuộc tính chiều sâu bên dưới */
+    /* Khi dùng postion thì chiều rộng nó sẽ tự động co lại so với chiều rộng ban đầu.Nên ta phải set chiều rộng width: 100% hoặc là làm theo cách bên dưới đây  */
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+height: 46px;
+background-color: black;
+/* Thuộc tính chiều sâu */
+z-index:1 ;
+
+
+
+}
+/* thằng #nav nó có tính chất inline-block để khi icon nó tới đâu thì độ rộng nó chiếm tới đó */
+#nav{
+    /*Vửa có tính chất inline vừa có tính chất block. Nhưng nó thiên về thằng inline hơn */
+display: inline-block;
+}
+#nav , .subnav{
+/* tắt cái chấm tròn trước thẻ li */
+list-style: none;
+}
+#nav li{
+/* làm cho nó trên cùng một dòng và cho nó thuộc tính block */
+display: inline-block;
+position: relative;
+}
+#nav > li > a{
+color: white;
+/* Thuộc tính chuyển đối chữ hoa */
+text-transform: uppercase;
+}
+#nav  li a{
+
+/* bỏ gạch chân */
+text-decoration: none;
+/* THuộc tính line-height là chiều cao của dòng chữ, chữ nó sẽ tự động ở giữa luôn. khác với height nhé. height thì nó sẽ không làm chữ ở giữa.Bản chất của 2 cái này là đều làm tăng height của content lên*/
+line-height: 46px;
+padding: 0 24px;
+
+/* mặc định của thẻ a và li là inline nên muốn nó ăn theo cái line-height thì phải block để nó nhận width vì mặc định của thẻ a đang là auto  nên nó không nhận  padding hoặc line-height; */
+display: block;
+transition: 0.4s;
+}
+/* kinh nghiệm là nên hover cho thẻ li vì khi làm menu 2 cấp nếu di xuống menu dưới nó sẽ mất màu background của button menu trên */
+#nav .subnav  li:hover a,
+#nav > li:hover > a{
+background-color: #ccc;
+color: #000;
+font-size: 17px;
+}
+#nav > li:hover .subnav{
+/* thuộc tính để hiện lên */
+display: block;
+}
+#nav .subnav{
+    /*Độ rộng tối thiểu */
+min-width: 160px;
+position: absolute;
+left: 0;
+/* Lấy đúng chiều cao của cha nó */
+top: 100%;
+background-color: white;
+display: none;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#nav .subnav > li{
+/* mặc định thẻ li của nó là inline-block, ta phai cho no tinh nang block  */
+display: block;
+}
+#nav .subnav > li > a {
+color: #000;
+padding: 0 21px;
+line-height: 38px;
+}
+.nav-caret-dow{
+
+}
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display:none;
+}
+#header .mobile-menu-btn,
+#header .search-button-header{
+float: right;
+padding: 0 21px;
+
+}
+#header .mobile-menu-btn:hover{
+    background-color:#ccc;
+}
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+#header .search-button-header:hover{
+background-color: rgb(255, 38, 0);
+/* thuộc tính thay đổi con trỏ chuột */
+cursor: pointer;
+}
+#header .mobile-menu-btn,
+#header .search-icon{
+color: #fff;
+font-size: 20px;
+line-height: 46px;
+
+}
+
+#slider{
+position: relative;
+margin-top: 46px;
+/* Kĩ thuật giúp ảnh luôn đẹp phù hợp với tỉ lệ ảnh gốc.Như vậy ảnh nó sẽ không bị vỡ, padding top là lấy 50% chiều cao của trình duyệt */
+padding-top: 50%;
+/* trong css phải chuyển nó về dạng tương đối tránh trường hợp lỗi không hiện ảnh,Nếu không có dấu chấm thì nó là file tĩnh */
+background: url('../css/img/slider/sl1.jpg') top center / cover no-repeat;
+}
+#slider .text-content{
+position: absolute;
+text-align: center;
+bottom: 47px;
+width: 100%;
+/*Ta cũng có thể dùng float để cách trái 50%, tức là phần trái nhất sẽ nằm giữa, và thêm thuộc tính transform: translateX(-50%): tức là cách phải 50%, hoặc translateY(50%)
+ left: 50%;
+transform: translateX(-50%); */
+color: white;
+text-shadow: 0 0 2px #000;
+}
+#slider .text-content h2{
+    /* Thuộc tính mới */
+font-weight: 400;
+font-size: 24px;
+margin-bottom: 25px;
+}
+#slider .text-content .text-description{
+font-size: 15px;
+text-shadow: 0 0 1px #000;
+}
+
+#content{
+
+}
+#content .content-section{
+width: 800px;
+/* overide  */
+max-width: 100%;
+padding: 64px 0 112px;
+margin-left: auto;
+margin-right: auto;
+padding-left: 16px;
+padding-right: 16px;
+
+}
+.section-heading{
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 30px;
+/* giãn dòng */
+letter-spacing: 4px;
+font-weight: 500;
+margin: 10px 0;
+
+}
+.section-sub-heading{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+text-align: center;
+font-size: 15px;
+margin: 15px 0;
+/* Thuộc tính chữ nghiêng */
+font-style: italic;
+color: gray;
+}
+#content .about-text{
+margin: 15px 0;
+font-size: 15px;
+text-align: justify;
+/* line-height: chỉnh độ cao của một dòng nếu là tiếng anh thì 1.4 nếu tiếng việt thì khoảng 1.6 */
+line-height: 1.4;
+
+}
+#content .member-list{
+margin-top: 32px;
+}
+
+#content .member-list .member-name{
+font-size: 15px;
+margin: 15px 0px;
+}
+#content .member-list .member-avata{
+    /* lưu ý: ảnh thì không cần đặt height, nếu đắt height thì không đặt width vì chiều còn lại sẽ tự dộng tỉ lệ với kích thước */
+width: 154px;
+margin-bottom: 16px;
+border-radius: 5px;
+}
+/* Tour-section */
+.tour-section{
+background-color: #000;
+}
+.tickets-list{
+background-color: #fff;
+margin-top: 40px;
+}
+.tickets-list li{
+list-style: none;
+font-size: 15px;
+padding: 4px 39px;
+border-bottom: 1px solid #ddd;
+color: #757577;
+}
+.tickets-list .sold-out{
+margin-left: 10px;
+background-color: red;
+color: #fff;
+padding: 2px 4px;
+border-radius: 4px;
+}
+.tickets-list .quantity{
+/* lưu ý: một thẻ mà có tính chất inline mà thêm float vào thì nó sẽ có tính năng block */
+float: right;
+width: 24px;
+height: 24px;
+background-color: black;
+color: white;
+border-radius: 50%;
+text-align: center;
+line-height: 24px;
+/* khi có float thì mới dùng được margin mang giá trị âm */
+margin-top: -3px;
+}
+.place-list{
+
+/* kĩ thuật giúp 2 đầu trái phải bằng nhau
+margin: 32px -8px 0; */
+margin-top: 16px;
+
+
+}
+
+.place-img{
+width: 100%;
+display: block;
+
+}
+.place-img:hover{
+opacity: 0.6;
+}
+.place-body{
+font-size: 15px;
+padding: 16px;
+background-color: white;
+}
+.place-heading{
+font-size: 15px;
+margin: 15px 0;
+
+}
+.place-time{
+margin: 15px 0;
+opacity: 0.8;
+}
+.place-desc{
+margin: 15px 0;
+line-height: 1.4;
+}
+.place-buy-btn{
+display: inline-block;
+text-decoration: none;
+color: #fff;
+padding: 8px 16px;
+background-color: black;
+text-align: center;
+
+}
+.place-buy-btn:hover{
+
+background-color: #ccc;
+color: black;
+}
+/* contact-form */
+.contact-content{
+margin-top: 48px;
+}
+.contact-infor{
+font-size: 18px;
+line-height: 1.5;
+}
+/* selector nâng cao: .contact-info i[class*="ti-"{} tức là những thẻ i nào chứa chữ ti- nhưng để đơn giản hóa vấn đề ta dùng bình thường*/
+.contact-infor i{
+/* tại sao lại phải đặt width mà không đặt margin: bởi vì trong nhiều trường hợp icon to nhỏ khác nhau khiến hàng bên cạnh nó sẽ không thẳng hàng vì vậy ta dùng width nó sẽ cân bằng */
+width: 30px;
+}
+.contact-infor a{
+    color:  #0055f4;
+    opacity:0.9;
+}
+.contact-infor a:hover{
+    color: tomato;
+}
+.contact-form{
+font-size: 15px;
+}
+.contact-form .form-control{
+padding: 10px;
+border: 1px solid #ccc;
+width: 100%;
+
+
+}
+.form-submit-btn{
+background-color: #000;
+color: white;
+border:none;
+padding: 11px 20px;
+float: right;
+/* bỏ thuộc tính mặc định trên sarafi */
+ -webkit-appearance:none;
+}
+.map-section img{
+width: 100%;
+/* Thuộc tính này giống opacity. Nó giúp ảnh mờ , tối đi  */
+filter: grayscale(0.4);
+}
+.form-submit-btn:hover{
+background-color: #cccc;
+color: black;
+/* Thuộc tính khi di chuột vào nó thành con trỏ */
+cursor: pointer;
+}
+#footer{
+padding: 64px 16px;
+text-align: center;
+}
+#footer .socials-list{
+font-size: 23px;
+margin-bottom: 15px;
+}
+#footer .socials-list a{
+color: black;
+text-decoration: none;
+opacity: 0.8;
+letter-spacing: 4px;
+;
+}
+#footer .copyright a,
+#footer .socials-list a:hover{
+opacity: 0.3;
+}
+#footer .copyright{
+font-size: 15px;
+color: black;
+opacity: 0.8;
+}
+#footer .copyright a{
+color: black;
+opacity: 0.8;
+}
+
+/* các kinh nghiệm từ dự án trên ta rút ra bài học sau: 
+1. Khi ta dùng thuộc tính float cho các thẻ con để chia cột  thì thẻ bao trùm của nó sẽ không thể bao trùm vì bản chất của float nó sẽ là đi ra một mặt phẳng khác nên thằng bao trùm nó sẽ co lại
+cách khắc phục là bạn thêm một thuộc tính overflow: hidden hoặc là cho nó một thẻ vào cuối thẻ có class là clear và css cho nó tính năng clear: both
+2. Nếu mà nó có nhiều cái điểm chung mà giống nhau thì ta nên đặt chung cho chúng các class có cùng thuộc tính
+3. Về nguyên tắc đổ nền thì chỉ đổ màu được những phần nhìn thấy. padding và content thôi. còn phần margin thì không thể đổ màu được */
