@@ -1,0 +1,240 @@
+a{
+color: #3333;
+}
+:root{
+--white-color:#fff;
+--black-color:#000;
+/* Màu chữ này là khi đọc trên website nó không bị mỏi mắt */
+--text-color:#333;
+--primary-color:#ff6435;
+--border-color:#dbdbdbdb;
+--header-height: 120px;
+--navbar-height: 34px;
+--header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+--background-color:#f5f5f5;
+--star-gold-color:#ffce3d;
+--header-sort-bar-height: 46px;
+
+}
+.container{
+
+}
+
+
+
+*{
+/* Kế thừa từ thẻ chứa nó */
+box-sizing: inherit;
+}
+body{
+height: 100%;
+}
+html{
+/* Thủ thuật hack đổi đơn vị từ px sang rem: theo quy định thì 1rem= 16px
+vậy 12rem thì bằng bao nhiêu pixel vì vậy ta đặt cho thằng cha nó là 62.5% như vậy thì 1rem nó sẽ bằng 10px */
+font-size:62.5%;
+line-height: 1.6rem;
+font-family: 'Roboto' sans-serif;
+height:100%;
+scroll-behavior: smooth;
+-webkit-scroll-behavior:smooth;
+}
+#main{
+background: url(../img/background_body.png) center top / 100% no-repeat;
+background-color: var(--background-color);
+}
+/* 3 cấp
+.grid{
+.row{
+.column{}
+.column{}
+.column{}
+}
+.row{
+.column{}
+.column{}
+.column{}
+}
+} */
+
+/* Nền móng làm responsive */
+.grid__row{
+display:flex;
+flex-wrap: wrap;
+/* lý do margin âm chỗ này là vì khi padding bên dưới nó sẽ bị thụt vào 12px  vì vậy ta phải margin để bù vào phần thiếu 2 bên 12px. Đây là kĩ thuật sử dụng rất nhiều trong bootstrap */
+margin-left: -5px;
+margin-right: -5px;
+}
+/* test */
+
+a:hover{
+opacity: 0.8;
+}
+/* animation */
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+@keyframes growth{
+from {
+transform: scale(var(--growth-from));
+}
+to {
+transform: scale(var(--growth-to));
+}
+}
+
+/* modal */
+.modals{
+position:fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+display:flex;
+animation: fadeIn linear 0.1s;
+
+}
+.modals__overlay{
+position:absolute;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.4);
+z-index: 0;
+}
+.modals__body{
+--growth-from:0.5;
+--growth-to: 1;
+margin :auto;
+position: relative;
+z-index: 1;
+animation:growth linear 0.1s;
+
+}
+/* button-style */
+.btns{
+min-width: 124px;
+height:34px;
+text-decoration: none;
+border: none;
+border-radius:2px;
+padding: 0;
+font-size:1.4rem;
+background-color:white;
+font-weight: 500;
+display:inline-flex;
+justify-content: center;
+align-items: center;
+}
+.btns-normal:hover{
+background-color:#fafafa;
+}
+.btns:focus{
+outline: none;
+}
+/*  trong một thẻ phải có 2 class này thì nó mới có tác dụng*/
+.btns.btns--primary{
+color: var(--white-color);
+background-color:var(--primary-color);
+}
+/* Hiệu ứng vô hiệu hóa khi chưa nhập liệu form hết  */
+.btns.btns--disable{
+background-color:#999;
+color: #949499;
+cursor: default;
+}
+.select-input{
+height:34px;
+padding:0 12px;
+border-radius: 2px;
+background-color:var(--white-color);
+min-width:200px;
+align-items:center;
+justify-content:space-between;
+display:flex;
+font-weight: 500;
+font-size:1.4rem;
+position: relative;
+cursor:pointer;
+}
+.select-input:hover .select-input__list{
+display:block;
+z-index: 2;
+}
+.select-input__list{
+position: absolute;
+background-color:var(--white-color);
+top: calc(100% + 1px);
+left: 0;
+right: 0;
+border-radius: 2px;
+list-style: none;
+margin-bottom: 0;
+padding: 8px 16px;
+display:none;
+}
+.select-input__list::after{
+content: "";
+position: absolute;
+top: -4px;
+left: 0;
+width: 100%;
+height: 10px;
+
+}
+.select-input__item{
+padding: 4px 0;
+}
+.select-input__link{
+color: var(--text-color);
+}
+.select-input__link:hover{
+text-decoration:none;
+color: var(--primary-color);
+}
+.select-input-icon{
+color: #4A4A4A;
+font-size: 1.0rem;
+position:relative;
+top: 1px;
+}
+/* pagination */
+.pagination{
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+.pagination-item{
+margin: 0 12px;
+}
+.pagination-item__link{
+--height:30px;
+display:block;
+color: #939393;
+font-size: 2rem;
+min-width:40px;
+height:var(--height);
+text-align:center;
+line-height:var(--height);
+border-radius:2px;
+
+
+}
+.pagination-item__link.pagination-item--active{
+color: var(--white-color);
+background-color:var(--primary-color);
+}
+.pagination-item__icon{
+
+}
+.hide-on-pc{
+    display:none;
+}
+/* làm silder  */
