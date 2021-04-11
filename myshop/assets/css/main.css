@@ -260,7 +260,7 @@ cursor: default;
 animation:headeNotifyGrowth ease-in 0.3s;
 transform-origin: calc(100% - 32px) top;
 display: none;
-z-index: 1;
+z-index: 2;
 /* Tối ưu chuyển động cho animation ta tham khảo thêm thuộc tính will-change */
 will-change: opacity transform;
 /* trang web kiểm tra xem trình duyệt có tương thích không caniuse.com */
