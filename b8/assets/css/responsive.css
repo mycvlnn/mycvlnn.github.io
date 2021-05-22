@@ -1,0 +1,125 @@
+/* 
+    Pc >=1024px
+    Tablet >= 740px & < 1024px
+    Mobile <=739px;
+*/
+@media (min-width:64em){
+
+}
+/* Tablet */
+@media (min-width:46.25em) and (max-width:63.9375em){
+    #nav .subnav a{
+    padding: 12px 16px;
+    }
+    
+}
+/* Tablet & Mobile */
+@media (max-width:63.9375em){
+    .mybtn{
+        padding: 10px 15px;
+    }
+}
+/* Mobile */
+@media (max-width:46.1875em){
+    .s-mt-16{
+        margin-top:16px;
+    }
+    .s-mt-8{
+        margin-top:8px;
+    }
+    .s-btn-full-width,
+    .s-col-full{
+        width:100%;
+    }
+    .hidden{
+        display: none;
+    }
+    #header{
+        overflow: hidden;
+    }
+    #nav{
+        display: block;
+    }
+    #nav > li{
+        display:block;
+    }
+    #nav > li:first-child,
+    #nav > li:first-child > a{
+        display:inline-block;
+    }
+    #nav > li:last-of-type {
+        display:none;
+    }
+    #header .header__search-icon{
+        display: none;
+    }
+    .menu-mobile{
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+    }
+  
+    #nav .subnav a{
+        color: #fff;
+        padding: 12px 14px;
+    }
+    
+    /* more mobile */
+    .nav__item-mobile{
+        display: block;
+    }
+    .nav__item-mobile .subnav li{
+        line-height: 1.5;
+    }
+    .nav__item-mobile .subnav{
+        display: none;
+        padding-left: 30px;
+        padding-bottom: 10px;
+        background-color: #333;
+        list-style: none;
+        animation: FadeIn 0.4s linear, Growth 0.4s ease-in, Growth1 0.4s ease-in;
+    }
+    .nav__item-mobile-home::after{
+        display: block;
+        content: "";
+        border-style: solid;
+        border-width: 7px;
+        position: absolute;
+        border-top-color: #fff;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        right: 4px;
+        top: 45%;
+        transition:0.4s;
+    }
+    .nav__item-ckeck:checked ~ .subnav{
+        display: block;
+    }
+    .nav__item-ckeck:checked ~ .nav__item-mobile-home::after{
+       transform: rotate(180deg);
+       top: 30%;
+    }
+    .nav__item-mobile .subnav a:hover{
+        background-color: #fff;
+        transition-delay: 0.3s;
+    }
+    /* content */
+  .members-list  .member-item-mobile{
+      width:100%;
+  }
+  #content .member-img{
+      width:60%;
+  }
+  #content .member-name{
+      font-size: 20px;
+  }
+  .form-control{
+      margin-top:8px;
+  }
+  .contact-info{
+      line-height:2
+  }
+
+}
