@@ -323,6 +323,7 @@ font-weight: 600;
     border-radius: 4px;
     appearance: none;
     -webkit-appearance: none;
+    border: none;
 
 }
 .place-buy-btn:hover{
@@ -401,5 +402,121 @@ font-weight: 600;
     }
     100%{
       z-index: 1;
+    }
+}
+/* Modal */
+
+
+.mymodal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgba(0,0,0,0.8);
+    z-index :99;
+    display: none;
+    font-family: tahoma  sans-serif;;
+}
+.mymodal.open{
+    display:flex;
+}
+.mymodal-container{
+    margin: auto;
+    background-color:white;
+    width:900px;
+    max-width: calc(100% - 32px);
+    position: relative;
+    animation: modalSlideDown linear 0.4s;
+}
+.mymodal-header{
+  
+}
+.mymodal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size:2rem;
+    padding: 12px;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.mymodal-close:hover{
+    opacity: 1;
+}
+.mymodal-heading{
+    background-color:  #009688!important;
+    font-size: 2.2rem;
+    padding: 32px 16px;
+    color: #fff;
+    font-family: segoe ui ;
+    text-align: center;
+    margin-bottom: 0;
+    font-weight: 400;
+
+}
+.mymodal-heading__icon{
+
+}
+.mymodal-heading__label{
+
+}
+
+.mymodal-body{
+padding: 16px;
+}
+.form-group{
+
+}
+.mymodal-label{
+    display: block;
+    font-size: 16px;
+    font-family: segoe ui;
+
+}
+.mymodal-input{
+    width:100%;
+    font-size:16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+.mymodal-btn{
+    width:100%;
+    background-color:#009688;
+    line-height:50px;
+    color: #fff;
+    border: none;
+    outline: none;
+    font-family: segoe ui ;
+}
+.mymodal-btn:hover{
+    opacity: 0.8;
+}
+.mymodal-btn:focus{
+    border: none;
+    outline: none;
+
+}
+.mymodal-footer{
+    text-align: right;
+    padding-right: 16px;
+    font-family: segoe ui;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.mymodal-help{
+
+}
+/* End modal */
+
+@keyframes modalSlideDown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
     }
 }

@@ -36,22 +36,14 @@
           </ul>
         </li>
         <!-- More for mobile -->
-        <label
-         for="input-ckeck"
-         class="nav__item-mobile"
-         >
-        <input 
-        hidden
-        type="checkbox"
-         id="input-ckeck"
-         class="nav__item-ckeck"
-        >
-       <div class="nav__item-mobile-home">More</div>
-        <ul class="subnav">
-          <li><a href="#">Merchandise </a></li>
-          <li><a href="#">Extras</a></li>
-          <li><a href="#">Media</a></li>
-        </ul>
+        <label for="input-ckeck" class="nav__item-mobile">
+          <input hidden type="checkbox" id="input-ckeck" class="nav__item-ckeck">
+          <div class="nav__item-mobile-home">More</div>
+          <ul class="subnav">
+            <li><a href="#">Merchandise </a></li>
+            <li><a href="#">Extras</a></li>
+            <li><a href="#">Media</a></li>
+          </ul>
         </label>
       </ul>
       <!-- end nav -->
@@ -60,7 +52,7 @@
       </div>
       <!-- menu mobile -->
       <div id="mobile-menu" class="menu-mobile">
-        <i class='bx bx-menu menu-mobile__icon' ></i>
+        <i class='bx bx-menu menu-mobile__icon'></i>
       </div>
     </div>
     <!-- end header -->
@@ -151,7 +143,7 @@
                 <h3 class="place-heading">New York</h3>
                 <p class="place-time">Fri 27 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="mybtn s-btn-full-width">Buy Tickets</button>
+                <button class="mybtn s-btn-full-width buy-ticket-btn">Buy Tickets</button>
               </div>
             </div>
             <div class="place-item column-3 s-col-full">
@@ -160,7 +152,7 @@
                 <h3 class="place-heading">Paris</h3>
                 <p class="place-time">Sat 28 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="mybtn s-btn-full-width">Buy Tickets</button>
+                <button class="mybtn s-btn-full-width buy-ticket-btn">Buy Tickets</button>
               </div>
             </div>
             <div class="place-item column-3 s-col-full">
@@ -169,7 +161,7 @@
                 <h3 class="place-heading">San Francisco</h3>
                 <p class="place-time">Fri 27 Nov 2016</p>
                 <p class="place-desc">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
-                <button class="mybtn s-btn-full-width">Buy Tickets</button>
+                <button class="mybtn s-btn-full-width buy-ticket-btn">Buy Tickets</button>
               </div>
             </div>
           </div>
@@ -183,22 +175,24 @@
           <div class="contact-form">
             <div class="column-2 s-col-full">
               <p class="contact-info"> <i class='font-icon bx bxs-map'></i>Chicago, US</p>
-              <p class="contact-info"> <i class='font-icon bx bxs-phone'></i>Phone: <a href="tel: +84 968785644">+84 968785644</a></p>
-              <p class="contact-info" ><i class='font-icon bx bx-mail-send'></i>Email:<a href="mailto: lengoaingu@mail.com"> lengoaingu@mail.com</a></p>
+              <p class="contact-info"> <i class='font-icon bx bxs-phone'></i>Phone: <a href="tel: +84 968785644">+84
+                  968785644</a></p>
+              <p class="contact-info"><i class='font-icon bx bx-mail-send'></i>Email:<a
+                  href="mailto: lengoaingu@mail.com"> lengoaingu@mail.com</a></p>
             </div>
             <div class="column-2 s-col-full s-mt-16">
               <form action="">
                 <div class="r0w">
                   <div class="column-2 s-col-full col">
-                    <input type="text" name="" required placeholder="Name" id="" class="form-control">
+                    <input type="text" name="" required placeholder="Name" id="contact-name" class="form-control">
                   </div>
                   <div class="column-2 s-col-full col">
-                    <input type="email" name="" required placeholder="Email" id="" class="form-control">
+                    <input type="email" name="" required placeholder="Email" id="contact-email" class="form-control">
                   </div>
                 </div>
                 <div class="r0w">
                   <div class="column-full mt-8">
-                    <input type="text" name="" required class="form-control" id="" placeholder="Message">
+                    <input type="text" name="" required class="form-control" id="contact-message" placeholder="Message">
                   </div>
                 </div>
                 <input class="mt-16 pull-right mybtn s-btn-full-width" type="submit" value="Send">
@@ -228,29 +222,56 @@
       <p class="copyrigt">Powered by <a href="#">Bistech</a></p>
     </div>
   </div>
+  <div class="mymodal">
+    <div class="mymodal-container">
+      <header class="mymodal-header">
+        <div class="mymodal-close"><i class='bx bx-x'></i></div>
+        <h2 class="mymodal-heading">
+          <i class='bx bxs-shopping-bag mymodal-heading__icon'></i> <span class='mymodal-heading__label'>Tickets</span>
+        </h2>
+      </header>
+      <div class="mymodal-body">
+        <div class="form-group">
+          <label class='mymodal-label' for="modal-ticket"><i class='bx bxs-cart-alt'></i> Tickets, $15 per
+            person</label>
+          <input class='mymodal-input' type="text" name="modal-ticket" id="modal-ticket" placeholder="How many">
+        </div>
+        <div class="form-group">
+          <label class='mymodal-label' for="modal-sendto"><i class='bx bxs-user'></i> Send to</label>
+          <input class='mymodal-input' type="text" name="modal-sendto" id="modal-sendto" placeholder="Enter Email">
+        </div>
+        <button class="mymodal-btn">PAY <i class='bx bx-check'></i></button>
+      </div>
+      <div class="mymodal-footer">
+        <p class="mymodal-help">Need <a href="https://mycvlnn.github.io">Help?</a></p>
+      </div>
+    </div>
+  </div>
+
+
   <script>
     // Bắt sự kiện click vào nút menu mobile thì header có chiều cao là auto
     var headerElement = document.getElementById('header');
     var mobileMenu = document.getElementById('mobile-menu');
-    var headerHeight=headerElement.clientHeight;
-    mobileMenu.onclick = function(e){
-      var isClose = headerElement.clientHeight===headerHeight;
-      if(isClose){
-        headerElement.style.height='auto';
-      }else{
-        headerElement.style.height=null;
+    var headerHeight = headerElement.clientHeight;
+    mobileMenu.onclick = function (e) {
+      var isClose = headerElement.clientHeight === headerHeight;
+      if (isClose) {
+        headerElement.style.height = 'auto';
+      } else {
+        headerElement.style.height = null;
       }
-      
+
     }
     // Tự động đóng menu khi chọn menu 
-    var menuItems= document.querySelectorAll('#nav li  a[href*="#"]');
+    var menuItems = document.querySelectorAll('#nav li  a[href*="#"]');
     // console.log(menuItems);
-    for(var i =0; i< menuItems.length; i++){
-      var  menuItem= menuItems[i];
+    for (var i = 0; i < menuItems.length; i++) {
+      var menuItem = menuItems[i];
       // console.log(menuItem);
       // kiểm tra xem thẻ a có phải là menu đa cấp hay không
-       menuItem.onclick=function(e){
-        headerElement.style.height=null;
+      menuItem.onclick = function (e) {
+        headerElement.style.height = null;
         // var isParentMenu = this.nextElementSibling && this.nextElementSibling.className=='subnav';
         // if(isParentMenu){
         //   e.preventDefault();
@@ -260,8 +281,42 @@
       }
 
     }
-   
+    // Xử lý xự kiện click vào nút buy-ticket-btn
+    var byTicketBtns = document.querySelectorAll('.buy-ticket-btn');
+    var modalElement = document.querySelector('.mymodal');
+    for (var byTicketBtn of byTicketBtns) {
+      byTicketBtn.onclick = function (e) {
+        //Khi click vào nút btn thì add thêm class open cho mymodal-container
+        modalElement.classList.add('open');
+
+      }
+    }
+    //Xử lý đóng modal khi click vào nút close
+    var closeModalElement = document.querySelector('.mymodal-close');
+    closeModalElement.onclick = function (e) {
+      if (modalElement.classList.contains('open')) {
+        modalElement.classList.remove('open');
+      }
+    }
+    
+    //Xử lý trường hợp khi click vào vùng overlay thì ẩn modal đi
+    modalElement.onclick = function (e) {
+      modalElement.classList.remove('open');
+    }
+    //xử lý xự kiện khi người dùng bấm vào nút ESC thì close modal đi
+    document.onkeyup = function (e){
+      if(e.which === 27){
+        modalElement.classList.remove('open');
+      }
+    }
+    var modalContainer = document.querySelector('.mymodal-container');
+    //Bỏ xự kiện nổi bọt từ thằng con
+    modalContainer.onclick = function(e){
+      e.stopPropagation();
+    }
   </script>
+
+
 </body>
 
 </html>
