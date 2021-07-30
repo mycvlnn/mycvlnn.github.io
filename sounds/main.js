@@ -64,6 +64,24 @@ const app = {
             image: "./assets/image/sontung.jpg"
         },
         {
+            name : "Sai Cách Yêu",
+            singer: "Lê Bảo Bình",
+            path: "./assets/music/sai_cach_yeu.mp3",
+            image: "./assets/image/lebaobinh.jpg"
+        },
+        {
+            name : "Nhạc sống thôn quê",
+            singer: "Nhiều ca sĩ",
+            path: "./assets/music/nhac_song_thon_que.mp3",
+            image: "./assets/image/nhacsongthonque.jpg"
+        },
+        {
+            name : "Liên khúc Nhạc Trẻ",
+            singer: "Lê Bảo Bình x Đình Dũng",
+            path: "./assets/music/lebaobinh_dinhdung.mp3",
+            image: "./assets/image/lebaobinh_dinhdung.jpg"
+        },
+        {
             name : "TONES AND I - DANCE MONKEY",
             singer: "TONES AND I",
             path: "./assets/music/dancemonkey.mp3",
