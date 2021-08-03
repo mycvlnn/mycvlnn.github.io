@@ -1,0 +1,65 @@
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color:#000;
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:1040;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.pace.pace-inactive .pace-progress {
+  display: none;
+}
+
+.pace .pace-progress {
+  z-index: 2000;
+  /*top: 0;
+  right: 0;
+  height: 5rem;
+  width: 5rem;
+  */
+}
+
+.pace .pace-progress:after {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff !important;
+  content: attr(data-progress-text);
+  font-weight: 100;
+  font-size: 2rem;
+  background-color:#E02217;
+  padding:15px;
+  border-radius:100%;
+  line-height: 50%;
+  text-align:center;
+  width:110px;
+  height:110px;
+  font-weight:700;
+  color: rgba(0, 0, 0, 0.19999999999999996);
+  -webkit-animation: circle 4s infinite ease-in-out ;
+  animation: circle 4s infinite ease-in-out;
+}
+
+@keyframes circle {
+    0% {
+        height:110px;
+        width:110px;
+    }
+    50% {
+        height:170px;
+        width:170px;
+    }
+    100% {
+        height:110px;
+        width:110px;
+    }
+}

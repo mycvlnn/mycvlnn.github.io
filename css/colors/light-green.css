@@ -1,0 +1,59 @@
+
+.special,
+.fa-quote-left,
+.custom-navbar .nav li.active > a,
+#about .about-info h2,
+.single-service i,
+.form_info,
+footer p a,
+ul.social-media li a:hover,
+ul.footer-links li a:hover,
+.post-item h1 a:hover,
+.post .meta a:hover
+ {
+	color:#8BC34A;
+}
+
+.simple-button,
+.pirana-p,
+#about .info .reversed a,
+#about .info .icons a:hover,
+.single-service:hover,
+.owl-theme .owl-controls .owl-page span,
+div.btn,
+.info-box-wrapper:hover,
+.icon-box,
+.contact-form textarea:hover,
+.contact-form textarea:focus,
+.contact-form input:hover,
+.contact-form input:focus,
+button[type='submit']:hover,
+button[type='submit']:focus,
+.color-ctrl .toggler,
+.pace .pace-progress:after  {
+    background-color: #8BC34A;
+}
+#about .info .reversed a,
+#about .info .icons a:hover,
+.post-content .simple-button:hover,
+ul.social-media li a:hover,
+ul.footer-links li a:hover {
+    border-color:#8BC34A;
+}
+
+.single-service:before {
+    border-top: 1px solid #8BC34A;
+    border-left: 1px solid #8BC34A;
+}
+.single-service:after {
+    border-bottom: 1px solid #8BC34A;
+    border-right: 1px solid #8BC34A;
+}
+@media (max-width: 992px) {
+	.custom-navbar .navbar-toggle .icon-bar {
+		background-color:#8BC34A;
+	}
+}
+.color-ctrl {
+    border-bottom:5px solid #8BC34A;
+}

@@ -1,0 +1,76 @@
+.color-ctrl {
+    position:fixed;
+    width:230px;
+    left:-235px;
+    transition:all .3s ease-in-out;
+    height:320px;
+    top:100px;
+    background-color:#fff;
+    border-bottom-right-radius:15px;
+    border-bottom:5px solid #e02217;
+    box-shadow:0 0 10px #DDD;
+    z-index:10000;
+    padding:12px;
+}
+.color-ctrl h6 {
+    margin-top:10px;
+    font-weight:bold;
+}
+.color-ctrl hr {
+    margin-top:2px;
+    margin-bottom:8px;
+}
+.color-ctrl .color-box {
+    cursor:pointer;
+    padding:10px;
+    width:100%;
+    margin:auto;
+    display:block;
+    box-shadow:4px 3px 5px #ddd;
+    background-color:#111;
+    transition:all .3s ease-in-out;
+}
+.color-ctrl .color-box:hover {
+    box-shadow:0 0 10px #ddd;
+}
+.color-ctrl .brown {
+    background-color:#795548;
+}
+.color-ctrl .cyan {
+    background-color:#00BCD4;
+}
+.color-ctrl .deep-orange {
+    background-color:#FF5722;
+}
+.color-ctrl .deep-purple {
+    background-color:#673AB7;
+}
+.color-ctrl .light-blue {
+    background-color:#03A9F4;
+}
+.color-ctrl .light-green {
+    background-color:#8BC34A;
+}
+.color-ctrl .turquoise {
+    background-color:#1abc9c;
+}
+.color-ctrl .original-red {
+    background-color:#E02217;
+}
+.color-ctrl.open {
+    left:0;
+}
+.color-ctrl .toggler {
+    position:absolute;
+    display:inline-block;
+    width:30px;
+    right:-30px;
+    cursor:pointer;
+    height:35px;
+    text-align:center;
+    line-height:2.4;
+    color:#fff;
+    top:0;
+    background-color:#E02217;
+    border-bottom-right-radius:10px;
+}
