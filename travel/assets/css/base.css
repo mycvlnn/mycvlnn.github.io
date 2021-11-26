@@ -1,0 +1,96 @@
+:root {
+  --header-height: 100px;
+  --white-color: white;
+  --purple-color: #ba71da;
+  --green-color: #1bbc9b;
+  --red-color: #f76570;
+  --yellow-color: #ffd205;
+  --blu-color: #14b9d5;
+  --text-color: #333;
+  --border-color: #f1f1f1;
+  --text-heading: #555555
+}
+/* reset css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.btn {
+  min-width: 95px;
+  border-radius: 20px;
+  padding: 6px 16px;
+  cursor: pointer;
+  text-align: center;
+}
+.btn:hover{
+  opacity: 0.9;
+}
+.bg-purple{
+  background-color: var(--purple-color);
+}
+.bg-red {
+  background-color: var(--red-color)
+}
+.bg-green {
+  background-color: var(--green-color)
+}
+.bg-yellow-gradient{
+  background: linear-gradient(to right, #ffd205 0%, #ff9b05 100%);
+  background: -webkit-linear-gradient(to right, #ffd205 0%, #ff9b05 100%);
+  background: -moz-linear-gradient(to right, #ffd205 0%, #ff9b05 100%)
+}
+.bg-red-gradient{
+  background: linear-gradient(to right, #f7696f 0%, #f78966 100%);
+  background: -webkit-linear-gradient(to right, #f7696f 0%, #f78966 100%);
+  background: -moz-linear-gradient(to right, #f7696f 0%, #f78966 100%);
+}
+.bg-blue-gradient{
+  background: linear-gradient(to right, #14bcd2 0%, #14d1b6 100%);
+  background: -webkit-linear-gradient(to right, #14bcd2 0%, #14d1b6 100%);
+  background: -moz-linear-gradient(to right, #14bcd2 0%, #14d1b6 100%);
+}
+.bg-green-gradient{
+  background: linear-gradient(to right, #1bbc97 0%, #1bbc68 100%);
+  background: -webkit-linear-gradient(to right, #1bbc97 0%, #1bbc68 100%);
+  background: -moz-linear-gradient(to right, #1bbc97 0%, #1bbc68 100%);
+}
+.bg-purple-gradient{
+  background: linear-gradient(to right, #bc71d4 0%, #d87181 100%);
+  background: -webkit-linear-gradient(to right, #bc71d4 0%, #d87181 100%);
+  background: -moz-linear-gradient(to right, #bc71d4 0%, #d87181 100%);
+}
+.text-effect-decoration{
+  position: relative;
+  z-index: 10;
+  display: inline-block;
+}
+.text-effect-decoration::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background-color: var(--color-underline);
+  bottom: 9%;
+  left: 0;
+  z-index: -1;
+}
+.items-center{
+  align-items: center;
+}
+@keyframes fadeIn{
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

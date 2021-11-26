@@ -1,0 +1,206 @@
+/* responsive */
+.hidden-pc{
+    display: none;
+}
+.show-pc{
+    display: block;
+}
+/* mobile */
+
+@media (max-width: 46.1875em) {
+  #header {
+    padding: 20px 50px !important;
+  }
+  .app-menu {
+    width: 100%;
+  }
+  .background__heading,
+  .background__subheading,
+  .content-section__heading{
+    padding: 0 20px;
+  }
+  .content-section{
+    overflow: hidden;
+  }
+  .content-section__item {
+    padding: 0 20px;
+  }
+  .content-section__banner-view{
+    padding: 8px 20px;
+  }
+  /* booking */
+  .section-booking__heading{
+    font-size: 3.1rem;
+  }
+  .section-booking__item, .section-booking__view{
+    margin: 0 20px;
+  }
+  .section-booking__date{
+    width: 100%;
+    padding: 16px;
+    bottom: -20%;
+  }
+  .section-booking__time-number{
+    font-size: 2rem;
+  }
+  .section-booking__time-label {
+    font-size: 1.2rem;
+    text-transform: lowercase
+  }
+  .section-booking__time::after{
+    top: -8%;
+    right: -44%;
+    font-size: 40px;
+  }
+  /* banner discover */
+  .content-section__discover{
+    flex-direction: column;
+    overflow-y: auto;
+    height: 350px;
+  }
+  /* section-package */
+  .section-package__price{
+    font-size: 2rem;
+  }
+  .section-package__desc {
+    font-size: 1.5rem;
+  }
+  /* footer */
+  .footer__form-group{
+    flex-direction: column;
+  }
+  .footer__form-group {
+    padding: 0 20px;
+  }
+  .footer__submit{
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .footer__label{
+    padding: 0 20px;
+  }
+  .text-center-mb{
+    text-align: center;
+  }
+  
+  
+.footer__heading {
+  font-size: 3.6rem;
+}
+.footer__copy-right {
+font-size: 1.3rem;
+}
+} 
+/* mobile and tablet */
+@media (max-width: 63.9375em) {
+  #header{
+    height:70px
+  }
+    .show-md{
+        display: block;
+    }
+    .hidden-md{
+        display: none;
+    }
+  .header__nav {
+    display: none;
+  }
+  .app-menu__pc {
+    display: none;
+  }
+  .app-menu__close {
+    padding: 10px 35px;
+    font-size: 27px;
+  }
+  .background__search-wrap{
+    width: 90%;
+    
+  }
+  .background__travel{
+    flex-direction: column;
+  }
+  .background__travel-img{
+    width: 5%;
+  }
+  .background__search-icon{
+    padding: 14px;
+    width:16%;
+  }
+  .content-section__heading{
+    font-size: 3rem;
+  }
+
+  /* banner */
+  .content-section__banner-list{
+    flex-direction: column;
+  }
+  .content-section__banner-item{
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .content-section__banner-heading{
+    font-size: 4rem;
+  }
+  .section-package__label {
+    bottom: -5%;
+  }
+  /* booking */
+  .section-booking__desc{
+    font-size: 1.4rem;
+  }
+  .section-booking__tour-item{
+    margin: 20px;
+  }
+
+  /* footer */
+  .footer__label {
+    margin-left: 0;
+    margin-bottom: 50px;
+}
+.footer__submit {
+  padding: 12px 60px;
+}
+.footer__social-list{
+  margin-bottom: 30px;
+}
+.mt-md-20{
+  margin-top: 20px;
+}
+.footer__card-heading{
+  margin-bottom: 10px;
+  margin-left: 8px;
+}
+.footer__card-infor {
+  margin-left: 8px;
+}
+.footer__social-link{
+  font-size: 3rem;
+}
+
+.footer__social-item:first-child .footer__social-link{
+  padding-left: 0;
+}
+
+
+  
+}
+/* tablet */
+/* (min-width: 740px) and (max-width: 1023px) */
+@media (min-width: 46.25em) and (max-width: 63.9375em) {
+
+}
+/* min-width: max-width: 1113px */
+@media (max-width: 69.5625em) {
+  .header__nav {
+    margin-left: 50px !important;
+  }
+  .section-package__price{
+    font-size: 2.4rem;
+  }
+}
+/* ipad-pro -> pc low resolution */
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .header__logo {
+    display: none;
+  }
+}
