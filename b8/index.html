@@ -29,22 +29,13 @@
         <li><a href="#contact">Contact</a></li>
         <li>
           <a href="#">More <i class='nav-arrow-down bx bx-caret-down'></i></a>
-          <ul class="subnav">
+          <ul class="subnav hidden-mobile">
             <li><a href="#">Merchandise </a></li>
             <li><a href="#">Extras</a></li>
             <li><a href="#">Media</a></li>
           </ul>
         </li>
-        <!-- More for mobile -->
-        <label for="input-ckeck" class="nav__item-mobile">
-          <input hidden type="checkbox" id="input-ckeck" class="nav__item-ckeck">
-          <div class="nav__item-mobile-home">More</div>
-          <ul class="subnav">
-            <li><a href="#">Merchandise </a></li>
-            <li><a href="#">Extras</a></li>
-            <li><a href="#">Media</a></li>
-          </ul>
-        </label>
+        
       </ul>
       <!-- end nav -->
       <div class="header__search">
@@ -254,6 +245,7 @@
     var headerElement = document.getElementById('header');
     var mobileMenu = document.getElementById('mobile-menu');
     var headerHeight = headerElement.clientHeight;
+
     mobileMenu.onclick = function (e) {
       var isClose = headerElement.clientHeight === headerHeight;
       if (isClose) {
@@ -263,35 +255,51 @@
       }
 
     }
+
     // Tự động đóng menu khi chọn menu 
     var menuItems = document.querySelectorAll('#nav li  a[href*="#"]');
-    // console.log(menuItems);
     for (var i = 0; i < menuItems.length; i++) {
       var menuItem = menuItems[i];
-      // console.log(menuItem);
       // kiểm tra xem thẻ a có phải là menu đa cấp hay không
       menuItem.onclick = function (e) {
-        headerElement.style.height = null;
-        // var isParentMenu = this.nextElementSibling && this.nextElementSibling.className=='subnav';
-        // if(isParentMenu){
-        //   e.preventDefault();
-        // }else{
-        //   headerElement.style.height=null;
-        // }
+        const siblingElement = this.nextElementSibling
+        var isParentMenu =siblingElement  && siblingElement.classList.contains('subnav');
+        if(isParentMenu){
+          // Ngăn chặn thuộc tính mặc định của trình duyệt 
+          e.preventDefault();
+
+          const isHiddenSubnav = siblingElement.classList.contains('hidden-mobile')
+
+          //Logic đóng mở subnav trên mobile. 
+          if(isHiddenSubnav){
+            siblingElement.classList.remove('hidden-mobile')
+          }else{
+            siblingElement.classList.add('hidden-mobile')
+          }
+          
+        }else{
+          // Lấy ra thằng subnav sau đó gán class là hidden-mobile để phục vụ cho việc đóng mở subnav
+          const subNavElement = document.querySelector('#nav li .subnav')
+          subNavElement.classList.add('hidden-mobile')
+          
+          headerElement.style.height=null;
+        }
       }
 
     }
+
     // Xử lý xự kiện click vào nút buy-ticket-btn
     var byTicketBtns = document.querySelectorAll('.buy-ticket-btn');
     var modalElement = document.querySelector('.mymodal');
     for (var byTicketBtn of byTicketBtns) {
       byTicketBtn.onclick = function (e) {
-        //Khi click vào nút btn thì add thêm class open cho mymodal-container
+        // Khi click vào nút btn thì add thêm class open cho mymodal-container
         modalElement.classList.add('open');
 
       }
     }
-    //Xử lý đóng modal khi click vào nút close
+
+    // Xử lý đóng modal khi click vào nút close
     var closeModalElement = document.querySelector('.mymodal-close');
     closeModalElement.onclick = function (e) {
       if (modalElement.classList.contains('open')) {
@@ -299,18 +307,20 @@
       }
     }
     
-    //Xử lý trường hợp khi click vào vùng overlay thì ẩn modal đi
+    // Xử lý trường hợp khi click vào vùng overlay thì ẩn modal đi
     modalElement.onclick = function (e) {
       modalElement.classList.remove('open');
     }
-    //xử lý xự kiện khi người dùng bấm vào nút ESC thì close modal đi
+
+    // xử lý xự kiện khi người dùng bấm vào nút ESC thì close modal đi
     document.onkeyup = function (e){
       if(e.which === 27){
         modalElement.classList.remove('open');
       }
     }
     var modalContainer = document.querySelector('.mymodal-container');
-    //Bỏ xự kiện nổi bọt từ thằng con
+
+    // Bỏ xự kiện nổi bọt từ thằng con
     modalContainer.onclick = function(e){
       e.stopPropagation();
     }
